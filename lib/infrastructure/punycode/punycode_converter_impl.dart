@@ -5,7 +5,7 @@ import 'package:punycode_converter/domain/punycode/i_punycode_converter.dart';
 class PunycodeConverterImpl implements IPunycodeConverter {
   @override
   String convertTextToPunycode(String text) {
-    return punycodeEncode(text);
+    return punycodeEncode(text, upperCase: true);
   }
 
   @override
