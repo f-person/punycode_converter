@@ -12,11 +12,28 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  fpdart: ^0.2.0
+  keyboard_dismisser: ^3.0.0
+  punycode: ^1.0.0
+  toor: ^1.0.0
 
 dev_dependencies:
   all_lint_rules_community: ^0.0.12
   flutter_test:
     sdk: flutter
+  intl_utils: ^2.7.0
+
+dependency_overrides:
+  meta: 1.7.0
 
 flutter:
   uses-material-design: true
+
+flutter_intl:
+  enabled: true
+  class_name: Localization
+  main_locale: en
+  arb_dir: lib/l10n
+  output_dir: lib/gen
