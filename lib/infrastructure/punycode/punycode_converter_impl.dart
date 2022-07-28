@@ -13,7 +13,7 @@ class PunycodeConverterImpl implements IPunycodeConverter {
     try {
       final text = DomainUtils.fromIDN(punycode);
       return Right(text);
-    } on Exception catch (_) {
+    } catch (_) {
       return const Left(PunycodeConversionFailure.invalidPunycode);
     }
   }

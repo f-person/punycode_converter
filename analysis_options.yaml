@@ -29,3 +29,4 @@ linter:
     one_member_abstracts: false
     comment_references: false
     omit_local_variable_types: false
+    avoid_catches_without_on_clauses: false
