@@ -6,6 +6,9 @@ import 'package:keyboard_dismisser/keyboard_dismisser.dart';
 import 'package:punycode_converter/application/punycode/punycode_converter_cubit/punycode_converter_cubit.dart';
 import 'package:punycode_converter/dependency_injection/dependencies/punycode_dependencies.dart';
 import 'package:punycode_converter/gen/l10n.dart';
+import 'package:punycode_converter/presentation/core/design_system/colors.dart';
+import 'package:punycode_converter/presentation/core/layout/scrollable_flexible_view.dart';
+import 'package:punycode_converter/presentation/punycode_converter/widgets/translation_field.dart';
 
 class PunycodeConverterScreen extends HookWidget {
   const PunycodeConverterScreen({super.key});
@@ -21,7 +24,9 @@ class PunycodeConverterScreen extends HookWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Punycode converter'),
+          backgroundColor: AppColors.secondary.withOpacity(0.3),
         ),
+        backgroundColor: AppColors.primary,
         body: BlocProvider<PunycodeConverterCubit>(
           create: constF(punycodeConverterCubitLocator()),
           child: BlocListener<PunycodeConverterCubit, PunycodeConverterState>(
@@ -29,34 +34,52 @@ class PunycodeConverterScreen extends HookWidget {
               textController: textController,
               punycodeController: punycodeController,
             ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 16,
-                vertical: 10,
-              ),
-              child: Builder(
-                builder: (context) {
-                  return Column(
-                    children: [
-                      TextField(
-                        controller: textController,
-                        onChanged: context.read<PunycodeConverterCubit>().updateText,
-                        decoration: InputDecoration(
-                          labelText: localization.textInputLabel,
-                        ),
+            child: Builder(
+              builder: (context) {
+                return ScrollableFlexibleView(
+                  physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 10,
+                    ),
+                    child: SafeArea(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child: TranslationField(
+                              controller: textController,
+                              onChanged: context.read<PunycodeConverterCubit>().updateText,
+                              hintText: 'Example: թութ.հայ', // TODO(f-person): Add to locale files.
+                              title: localization.textInputLabel,
+                            ),
+                          ),
+                          const SizedBox(height: 20),
+                          Expanded(
+                            child: TranslationField(
+                              controller: punycodeController,
+                              hintText: 'Example: xn--69aa8bzb.xn--y9a3aq',
+                              title: localization.punycodeInputLabel,
+                              onChanged: context.read<PunycodeConverterCubit>().updatePunycode,
+                            ),
+                          ),
+                          const Divider(height: 40),
+                          Text(
+                            localization.whatIsPunycodeLabel,
+                            style: const TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          const SizedBox(height: 8),
+                          Text(localization.whatIsPunycodeDescription),
+                        ],
                       ),
-                      const SizedBox(height: 8),
-                      TextField(
-                        controller: punycodeController,
-                        onChanged: context.read<PunycodeConverterCubit>().updatePunycode,
-                        decoration: InputDecoration(
-                          labelText: localization.punycodeInputLabel,
-                        ),
-                      ),
-                    ],
-                  );
-                },
-              ),
+                    ),
+                  ),
+                );
+              },
             ),
           ),
         ),

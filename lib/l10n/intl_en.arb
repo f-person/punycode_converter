@@ -1,4 +1,6 @@
 {
   "textInputLabel": "Text",
-  "punycodeInputLabel": "Punycode"
+  "punycodeInputLabel": "Punycode",
+  "whatIsPunycodeLabel": "What is Punycode?",
+  "whatIsPunycodeDescription": "Punycode is a representation of Unicode with the limited ASCII character subset used for Internet hostnames. Using Punycode, host names containing Unicode characters are transcoded to a subset of ASCII consisting of letters, digits, and hyphens, which is called the letter-digit-hyphen (LDH) subset."
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:punycode_converter/gen/l10n.dart';
+import 'package:punycode_converter/presentation/core/design_system/colors.dart';
 import 'package:punycode_converter/presentation/punycode_converter/punycode_converter_screen.dart';
 
 class App extends StatelessWidget {
@@ -11,7 +12,8 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: AppColors.primary,
+        brightness: Brightness.dark,
       ),
       localizationsDelegates: const [
         Localization.delegate,
