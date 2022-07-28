@@ -22,7 +22,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "copyButtonLabel": MessageLookupByLibrary.simpleMessage("COPY"),
+        "punycodeExample": MessageLookupByLibrary.simpleMessage(
+            "Example: xn--69aa8bzb.xn--y9a3aq"),
         "punycodeInputLabel": MessageLookupByLibrary.simpleMessage("Punycode"),
+        "textExample":
+            MessageLookupByLibrary.simpleMessage("Example: թութ.հայ"),
         "textInputLabel": MessageLookupByLibrary.simpleMessage("Text"),
         "whatIsPunycodeDescription": MessageLookupByLibrary.simpleMessage(
             "Punycode is a representation of Unicode with the limited ASCII character subset used for Internet hostnames. Using Punycode, host names containing Unicode characters are transcoded to a subset of ASCII consisting of letters, digits, and hyphens, which is called the letter-digit-hyphen (LDH) subset."),

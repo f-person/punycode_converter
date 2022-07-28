@@ -51,7 +51,7 @@ class PunycodeConverterScreen extends HookWidget {
                             child: TranslationField(
                               controller: textController,
                               onChanged: context.read<PunycodeConverterCubit>().updateText,
-                              hintText: 'Example: թութ.հայ', // TODO(f-person): Add to locale files.
+                              hintText: localization.textExample,
                               title: localization.textInputLabel,
                             ),
                           ),
@@ -59,7 +59,7 @@ class PunycodeConverterScreen extends HookWidget {
                           Expanded(
                             child: TranslationField(
                               controller: punycodeController,
-                              hintText: 'Example: xn--69aa8bzb.xn--y9a3aq',
+                              hintText: localization.punycodeExample,
                               title: localization.punycodeInputLabel,
                               onChanged: context.read<PunycodeConverterCubit>().updatePunycode,
                             ),

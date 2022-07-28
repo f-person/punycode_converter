@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:punycode_converter/gen/l10n.dart';
 import 'package:punycode_converter/presentation/core/design_system/colors.dart';
 import 'package:punycode_converter/presentation/core/gestures/tappable.dart';
+import 'package:punycode_converter/presentation/core/wrappers/animated_switcher_wrapper.dart';
 
 class TranslationField extends StatefulWidget {
   const TranslationField({
@@ -40,15 +42,31 @@ class _TranslationFieldState extends State<TranslationField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          widget.title,
-          style: const TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w500,
-            color: Color(0xFFF4F4F6),
-          ),
+        Row(
+          children: [
+            Text(
+              widget.title,
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+                color: Color(0xFFF4F4F6),
+              ),
+            ),
+            const Spacer(),
+            ValueListenableBuilder<bool>(
+              valueListenable: _hasFocusNotifier,
+              builder: (context, hasFocus, _) {
+                final anyFieldHasFocus = FocusScope.of(context).hasFocus;
+
+                return AnimatedSwitcherWrapper(
+                  child: anyFieldHasFocus && !hasFocus
+                      ? _CopyButton(controller: widget.controller)
+                      : const SizedBox(height: 48),
+                );
+              },
+            ),
+          ],
         ),
-        const SizedBox(height: 10),
         Expanded(
           child: DecoratedBox(
             decoration: BoxDecoration(
@@ -84,10 +102,7 @@ class _TranslationFieldState extends State<TranslationField> {
                   ValueListenableBuilder<bool>(
                     valueListenable: _hasFocusNotifier,
                     builder: (context, hasFocus, _) {
-                      return AnimatedSwitcher(
-                        duration: const Duration(milliseconds: 300),
-                        switchInCurve: Curves.easeInOutCubic,
-                        switchOutCurve: Curves.easeInOutCubic,
+                      return AnimatedSwitcherWrapper(
                         child: !hasFocus
                             ? const SizedBox.shrink()
                             : _TranslationFieldSuffix(
@@ -131,10 +146,7 @@ class _TranslationFieldSuffix extends StatelessWidget {
 
         final shouldClear = value.text.isNotEmpty;
 
-        return AnimatedSwitcher(
-          duration: const Duration(milliseconds: 300),
-          switchInCurve: Curves.easeInOutCubic,
-          switchOutCurve: Curves.easeInOutCubic,
+        return AnimatedSwitcherWrapper(
           transitionBuilder: (child, animation) {
             return FadeTransition(
               opacity: animation,
@@ -172,5 +184,26 @@ class _TranslationFieldSuffix extends StatelessWidget {
       );
       valueChangedCallback(text);
     }
+  }
+}
+
+class _CopyButton extends StatelessWidget {
+  const _CopyButton({required this.controller, super.key});
+
+  final TextEditingController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    final localization = Localization.of(context);
+
+    return TextButton(
+      onPressed: () {
+        Clipboard.setData(ClipboardData(text: controller.text));
+      },
+      style: TextButton.styleFrom(
+        primary: AppColors.action,
+      ),
+      child: Text(localization.copyButtonLabel),
+    );
   }
 }

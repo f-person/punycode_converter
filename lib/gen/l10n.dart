@@ -89,6 +89,36 @@ class Localization {
       args: [],
     );
   }
+
+  /// `COPY`
+  String get copyButtonLabel {
+    return Intl.message(
+      'COPY',
+      name: 'copyButtonLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Example: թութ.հայ`
+  String get textExample {
+    return Intl.message(
+      'Example: թութ.հայ',
+      name: 'textExample',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Example: xn--69aa8bzb.xn--y9a3aq`
+  String get punycodeExample {
+    return Intl.message(
+      'Example: xn--69aa8bzb.xn--y9a3aq',
+      name: 'punycodeExample',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Localization> {
