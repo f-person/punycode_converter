@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_top_blocked_bouncing_scroll_physics/flutter_top_blocked_bouncing_scroll_physics.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:punycode_converter/application/core/app_links.dart';
+import 'package:punycode_converter/dependency_injection/dependencies/url_dependencies.dart';
 import 'package:punycode_converter/gen/l10n.dart';
 import 'package:punycode_converter/presentation/core/design_system/colors.dart';
 import 'package:punycode_converter/presentation/core/layout/tiles_list_view.dart';
@@ -70,8 +72,8 @@ class SettingsScreen extends StatelessWidget {
                 AppListTile(
                   icon: const Icon(FontAwesomeIcons.github),
                   label: Text(localization.makerName),
-                  trailing: const Text('@f-person'),
-                  onTap: () {},
+                  trailing: const Text(AppLinks.makerGitHubHandle),
+                  onTap: () => urlLauncherLocator().launchUrl(AppLinks.makerGitHubLink),
                 ),
               ],
             ),
