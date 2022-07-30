@@ -9,14 +9,11 @@ class _TranslationFieldCopyButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final localization = Localization.of(context);
 
-    return TextButton(
-      onPressed: () {
+    return AppTextButton(
+      onTap: () {
         Clipboard.setData(ClipboardData(text: controller.text));
       },
-      style: TextButton.styleFrom(
-        primary: AppColors.action,
-      ),
-      child: Text(localization.copyButtonLabel),
+      label: localization.copyButtonLabel,
     );
   }
 }

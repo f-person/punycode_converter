@@ -129,6 +129,96 @@ class Localization {
       args: [],
     );
   }
+
+  /// `Privacy Policy`
+  String get privacyPolicy {
+    return Intl.message(
+      'Privacy Policy',
+      name: 'privacyPolicy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Licenses`
+  String get licenses {
+    return Intl.message(
+      'Licenses',
+      name: 'licenses',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No data is collected 🦄`
+  String get privacyPolicyText {
+    return Intl.message(
+      'No data is collected 🦄',
+      name: 'privacyPolicyText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Done`
+  String get doneButtonLabel {
+    return Intl.message(
+      'Done',
+      name: 'doneButtonLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `About`
+  String get aboutAppLabel {
+    return Intl.message(
+      'About',
+      name: 'aboutAppLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `LEGAL STUFF`
+  String get legalStuffTitle {
+    return Intl.message(
+      'LEGAL STUFF',
+      name: 'legalStuffTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `MADE BY`
+  String get madeByTitle {
+    return Intl.message(
+      'MADE BY',
+      name: 'madeByTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `CONTACT AND SUPPORT`
+  String get contactAndSupportTitle {
+    return Intl.message(
+      'CONTACT AND SUPPORT',
+      name: 'contactAndSupportTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Arshak Aghakaryan`
+  String get makerName {
+    return Intl.message(
+      'Arshak Aghakaryan',
+      name: 'makerName',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Localization> {

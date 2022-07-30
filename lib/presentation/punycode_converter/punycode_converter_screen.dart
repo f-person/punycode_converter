@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:fpdart/fpdart.dart' hide State;
 import 'package:keyboard_dismisser/keyboard_dismisser.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:punycode_converter/application/punycode/punycode_converter_cubit/punycode_converter_cubit.dart';
 import 'package:punycode_converter/dependency_injection/dependencies/punycode_dependencies.dart';
 import 'package:punycode_converter/gen/l10n.dart';
@@ -43,29 +44,28 @@ class _PunycodeConverterScreenState extends State<PunycodeConverterScreen> {
     final punycodeController = useTextEditingController();
 
     return KeyboardDismisser(
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Punycode converter'),
-          actions: const [SettingsButton()],
-        ),
-        body: BlocProvider<PunycodeConverterCubit>(
-          create: constF(punycodeConverterCubitLocator()),
-          child: BlocListener<PunycodeConverterCubit, PunycodeConverterState>(
-            listener: _createPunycodeConverterListener(
-              textController: textController,
-              punycodeController: punycodeController,
-            ),
-            child: ScrollableFlexibleView(
-              physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 10,
-                ),
-                child: SafeArea(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+      child: CupertinoScaffold(
+        body: Scaffold(
+          appBar: AppBar(
+            title: const Text('Punycode converter'),
+            actions: const [SettingsButton()],
+          ),
+          body: BlocProvider<PunycodeConverterCubit>(
+            create: constF(punycodeConverterCubitLocator()),
+            child: BlocListener<PunycodeConverterCubit, PunycodeConverterState>(
+              listener: _createPunycodeConverterListener(
+                textController: textController,
+                punycodeController: punycodeController,
+              ),
+              child: ScrollableFlexibleView(
+                physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 10,
+                  ),
+                  child: SafeArea(
+                    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                       Expanded(
                         child: ValueListenableBuilder<bool>(
                           valueListenable: _canDisplayCopyForTextNotifier,
@@ -107,7 +107,7 @@ class _PunycodeConverterScreenState extends State<PunycodeConverterScreen> {
                       ),
                       const SizedBox(height: 8),
                       Text(localization.whatIsPunycodeDescription),
-                    ],
+                    ]),
                   ),
                 ),
               ),

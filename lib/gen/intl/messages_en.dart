@@ -22,7 +22,18 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "aboutAppLabel": MessageLookupByLibrary.simpleMessage("About"),
+        "contactAndSupportTitle":
+            MessageLookupByLibrary.simpleMessage("CONTACT AND SUPPORT"),
         "copyButtonLabel": MessageLookupByLibrary.simpleMessage("COPY"),
+        "doneButtonLabel": MessageLookupByLibrary.simpleMessage("Done"),
+        "legalStuffTitle": MessageLookupByLibrary.simpleMessage("LEGAL STUFF"),
+        "licenses": MessageLookupByLibrary.simpleMessage("Licenses"),
+        "madeByTitle": MessageLookupByLibrary.simpleMessage("MADE BY"),
+        "makerName": MessageLookupByLibrary.simpleMessage("Arshak Aghakaryan"),
+        "privacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
+        "privacyPolicyText":
+            MessageLookupByLibrary.simpleMessage("No data is collected 🦄"),
         "punycodeExample": MessageLookupByLibrary.simpleMessage(
             "Example: xn--69aa8bzb.xn--y9a3aq"),
         "punycodeInputLabel": MessageLookupByLibrary.simpleMessage("Punycode"),

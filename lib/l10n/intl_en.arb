@@ -6,5 +6,14 @@
   "copyButtonLabel": "COPY",
   "textExample": "Example: թութ.հայ",
   "punycodeExample": "Example: xn--69aa8bzb.xn--y9a3aq",
-  "settingsScreenTitle": "Settings"
+  "settingsScreenTitle": "Settings",
+  "privacyPolicy": "Privacy Policy",
+  "licenses": "Licenses",
+  "privacyPolicyText": "No data is collected 🦄",
+  "doneButtonLabel": "Done",
+  "aboutAppLabel": "About",
+  "legalStuffTitle": "LEGAL STUFF",
+  "madeByTitle": "MADE BY",
+  "contactAndSupportTitle": "CONTACT AND SUPPORT",
+  "makerName": "Arshak Aghakaryan"
 }
