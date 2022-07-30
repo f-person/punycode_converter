@@ -36,9 +36,9 @@ class _TranslationFieldInputState extends State<_TranslationFieldInput> {
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(
-      decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(20)),
-        color: AppColors.secondary.withOpacity(0.3),
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(20)),
+        color: AppColors.secondary30,
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(

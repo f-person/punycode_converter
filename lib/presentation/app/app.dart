@@ -14,6 +14,10 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primaryColor: AppColors.primary,
         brightness: Brightness.dark,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: AppColors.secondary30,
+        ),
+        scaffoldBackgroundColor: AppColors.primary,
       ),
       localizationsDelegates: const [
         Localization.delegate,

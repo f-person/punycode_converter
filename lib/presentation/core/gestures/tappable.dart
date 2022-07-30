@@ -28,16 +28,19 @@ class _TappableState extends State<Tappable> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onTapDown: (_) => _startTapAnimation(),
-      onTapUp: (_) => _onTapUp(),
-      onTapCancel: _stopTapAnimation,
-      child: AnimatedScale(
-        curve: Curves.easeOut,
-        scale: _isTapped ? widget.tappedScale : 1,
-        duration: const Duration(milliseconds: 100),
-        child: widget.child,
+    return Semantics(
+      button: true,
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTapDown: (_) => _startTapAnimation(),
+        onTapUp: (_) => _onTapUp(),
+        onTapCancel: _stopTapAnimation,
+        child: AnimatedScale(
+          curve: Curves.easeOut,
+          scale: _isTapped ? widget.tappedScale : 1,
+          duration: const Duration(milliseconds: 100),
+          child: widget.child,
+        ),
       ),
     );
   }

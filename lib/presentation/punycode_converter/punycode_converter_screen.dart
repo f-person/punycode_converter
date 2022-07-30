@@ -6,8 +6,8 @@ import 'package:keyboard_dismisser/keyboard_dismisser.dart';
 import 'package:punycode_converter/application/punycode/punycode_converter_cubit/punycode_converter_cubit.dart';
 import 'package:punycode_converter/dependency_injection/dependencies/punycode_dependencies.dart';
 import 'package:punycode_converter/gen/l10n.dart';
-import 'package:punycode_converter/presentation/core/design_system/colors.dart';
 import 'package:punycode_converter/presentation/core/layout/scrollable_flexible_view.dart';
+import 'package:punycode_converter/presentation/punycode_converter/widgets/settings_button.dart';
 import 'package:punycode_converter/presentation/punycode_converter/widgets/translation_field/translation_field.dart';
 
 class PunycodeConverterScreen extends StatefulHookWidget {
@@ -46,9 +46,8 @@ class _PunycodeConverterScreenState extends State<PunycodeConverterScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Punycode converter'),
-          backgroundColor: AppColors.secondary.withOpacity(0.3),
+          actions: const [SettingsButton()],
         ),
-        backgroundColor: AppColors.primary,
         body: BlocProvider<PunycodeConverterCubit>(
           create: constF(punycodeConverterCubitLocator()),
           child: BlocListener<PunycodeConverterCubit, PunycodeConverterState>(

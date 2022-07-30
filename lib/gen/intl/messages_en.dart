@@ -26,6 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "punycodeExample": MessageLookupByLibrary.simpleMessage(
             "Example: xn--69aa8bzb.xn--y9a3aq"),
         "punycodeInputLabel": MessageLookupByLibrary.simpleMessage("Punycode"),
+        "settingsScreenTitle": MessageLookupByLibrary.simpleMessage("Settings"),
         "textExample":
             MessageLookupByLibrary.simpleMessage("Example: թութ.հայ"),
         "textInputLabel": MessageLookupByLibrary.simpleMessage("Text"),

@@ -119,6 +119,16 @@ class Localization {
       args: [],
     );
   }
+
+  /// `Settings`
+  String get settingsScreenTitle {
+    return Intl.message(
+      'Settings',
+      name: 'settingsScreenTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Localization> {
