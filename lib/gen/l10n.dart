@@ -259,6 +259,16 @@ class Localization {
       args: [],
     );
   }
+
+  /// `Check the source code`
+  String get checkSourceCode {
+    return Intl.message(
+      'Check the source code',
+      name: 'checkSourceCode',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Localization> {

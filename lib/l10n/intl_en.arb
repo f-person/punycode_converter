@@ -19,5 +19,6 @@
   "reviewOnAppStore": "Review on the App Store",
   "email": "Email",
   "reportBug": "Report a bug",
-  "suggestImporvement": "Suggest an improvement"
+  "suggestImporvement": "Suggest an improvement",
+  "checkSourceCode": "Check the source code"
 }

@@ -87,6 +87,19 @@ class SettingsScreen extends StatelessWidget {
                   onTap: () => urlLauncherLocator().launchUrl(AppStrings.projectGitHubIssuesLink),
                 ),
                 AppListTile(
+                  icon: const SizedBox(
+                    width: 24,
+                    child: Icon(
+                      FontAwesomeIcons.code,
+                      size: 20,
+                    ),
+                  ),
+                  label: Text(localization.checkSourceCode),
+                  onTap: () => urlLauncherLocator().launchUrl(
+                    AppStrings.projectGitHubRepositoryLink,
+                  ),
+                ),
+                AppListTile(
                   icon: const Icon(
                     FontAwesomeIcons.solidHeart,
                     color: AppColors.action,
