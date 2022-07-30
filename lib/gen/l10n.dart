@@ -219,6 +219,46 @@ class Localization {
       args: [],
     );
   }
+
+  /// `Review on the App Store`
+  String get reviewOnAppStore {
+    return Intl.message(
+      'Review on the App Store',
+      name: 'reviewOnAppStore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message(
+      'Email',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Report a bug`
+  String get reportBug {
+    return Intl.message(
+      'Report a bug',
+      name: 'reportBug',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Suggest an improvement`
+  String get suggestImporvement {
+    return Intl.message(
+      'Suggest an improvement',
+      name: 'suggestImporvement',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Localization> {

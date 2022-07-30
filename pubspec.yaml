@@ -23,6 +23,7 @@ dependencies:
   flutter_top_blocked_bouncing_scroll_physics: ^1.0.0
   font_awesome_flutter: ^10.1.0
   fpdart: ^0.2.0
+  in_app_review: ^2.0.4
   keyboard_dismisser: ^3.0.0
   modal_bottom_sheet: ^2.1.0
   toor: ^1.0.0

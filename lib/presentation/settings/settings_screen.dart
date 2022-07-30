@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_top_blocked_bouncing_scroll_physics/flutter_top_blocked_bouncing_scroll_physics.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:punycode_converter/application/core/app_links.dart';
+import 'package:punycode_converter/application/core/app_strings.dart';
+import 'package:punycode_converter/dependency_injection/dependencies/stores_dependencies.dart';
 import 'package:punycode_converter/dependency_injection/dependencies/url_dependencies.dart';
 import 'package:punycode_converter/gen/l10n.dart';
 import 'package:punycode_converter/presentation/core/design_system/colors.dart';
@@ -67,13 +68,43 @@ class SettingsScreen extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             TilesListView(
+              header: Text(localization.contactAndSupportTitle),
+              children: [
+                AppListTile(
+                  icon: const Icon(FontAwesomeIcons.comment),
+                  label: Text(localization.email),
+                  trailing: const Text(AppStrings.supportEmail),
+                  onTap: () => urlLauncherLocator().launchUrl(AppStrings.supportEmailLink),
+                ),
+                AppListTile(
+                  icon: const Icon(FontAwesomeIcons.lightbulb),
+                  label: Text(localization.suggestImporvement),
+                  onTap: () => urlLauncherLocator().launchUrl(AppStrings.projectGitHubIssuesLink),
+                ),
+                AppListTile(
+                  icon: const Icon(FontAwesomeIcons.bug),
+                  label: Text(localization.reportBug),
+                  onTap: () => urlLauncherLocator().launchUrl(AppStrings.projectGitHubIssuesLink),
+                ),
+                AppListTile(
+                  icon: const Icon(
+                    FontAwesomeIcons.solidHeart,
+                    color: AppColors.action,
+                  ),
+                  label: Text(localization.reviewOnAppStore),
+                  onTap: () => inAppReviewLocator().openStoreReviewForm(),
+                ),
+              ],
+            ),
+            const SizedBox(height: 30),
+            TilesListView(
               header: Text(localization.madeByTitle),
               children: [
                 AppListTile(
                   icon: const Icon(FontAwesomeIcons.github),
                   label: Text(localization.makerName),
-                  trailing: const Text(AppLinks.makerGitHubHandle),
-                  onTap: () => urlLauncherLocator().launchUrl(AppLinks.makerGitHubLink),
+                  trailing: const Text(AppStrings.makerGitHubHandle),
+                  onTap: () => urlLauncherLocator().launchUrl(AppStrings.makerGitHubLink),
                 ),
               ],
             ),

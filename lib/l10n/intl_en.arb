@@ -15,5 +15,9 @@
   "legalStuffTitle": "LEGAL STUFF",
   "madeByTitle": "MADE BY",
   "contactAndSupportTitle": "CONTACT AND SUPPORT",
-  "makerName": "Arshak Aghakaryan"
+  "makerName": "Arshak Aghakaryan",
+  "reviewOnAppStore": "Review on the App Store",
+  "email": "Email",
+  "reportBug": "Report a bug",
+  "suggestImporvement": "Suggest an improvement"
 }
