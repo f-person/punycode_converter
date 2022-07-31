@@ -49,22 +49,19 @@ class _TranslationFieldInputState extends State<_TranslationFieldInput> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              child: SizedBox(
-                height: double.infinity,
-                child: TextField(
-                  controller: widget.controller,
-                  onChanged: widget.onChanged,
-                  focusNode: widget.focusNode,
-                  textInputAction: TextInputAction.newline,
-                  minLines: 8,
-                  maxLines: null,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hintText: widget.hintText,
-                    contentPadding: EdgeInsets.zero,
-                  ),
-                  cursorColor: AppColors.action,
+              child: TextField(
+                controller: widget.controller,
+                onChanged: widget.onChanged,
+                focusNode: widget.focusNode,
+                textInputAction: TextInputAction.newline,
+                minLines: 5,
+                maxLines: null,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: widget.hintText,
+                  contentPadding: EdgeInsets.zero,
                 ),
+                cursorColor: AppColors.action,
               ),
             ),
             ValueListenableBuilder<bool>(

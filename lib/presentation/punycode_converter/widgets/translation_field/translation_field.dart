@@ -32,6 +32,7 @@ class TranslationField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
         Row(
           children: [
@@ -62,13 +63,11 @@ class TranslationField extends StatelessWidget {
             ),
           ],
         ),
-        Expanded(
-          child: _TranslationFieldInput(
-            controller: controller,
-            onChanged: onChanged,
-            hintText: hintText,
-            focusNode: focusNode,
-          ),
+        _TranslationFieldInput(
+          controller: controller,
+          onChanged: onChanged,
+          hintText: hintText,
+          focusNode: focusNode,
         ),
       ],
     );

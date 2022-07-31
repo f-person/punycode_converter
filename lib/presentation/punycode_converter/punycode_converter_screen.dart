@@ -74,9 +74,11 @@ class _PunycodeConverterScreenState extends State<PunycodeConverterScreen> {
                     vertical: 10,
                   ),
                   child: SafeArea(
-                    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                      Expanded(
-                        child: ValueListenableBuilder<bool>(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ValueListenableBuilder<bool>(
                           valueListenable: _canDisplayCopyForTextNotifier,
                           builder: (context, canDisplayCopyButton, _) {
                             return TranslationField(
@@ -89,10 +91,8 @@ class _PunycodeConverterScreenState extends State<PunycodeConverterScreen> {
                             );
                           },
                         ),
-                      ),
-                      const SizedBox(height: 20),
-                      Expanded(
-                        child: ValueListenableBuilder<bool>(
+                        const SizedBox(height: 20),
+                        ValueListenableBuilder<bool>(
                           valueListenable: _canDisplayCopyForPunycodeNotifier,
                           builder: (context, canDisplayCopyButton, _) {
                             return TranslationField(
@@ -105,18 +105,18 @@ class _PunycodeConverterScreenState extends State<PunycodeConverterScreen> {
                             );
                           },
                         ),
-                      ),
-                      const Divider(height: 40),
-                      Text(
-                        localization.whatIsPunycodeLabel,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
+                        const Divider(height: 40),
+                        Text(
+                          localization.whatIsPunycodeLabel,
+                          style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 8),
-                      Text(localization.whatIsPunycodeDescription),
-                    ]),
+                        const SizedBox(height: 8),
+                        Text(localization.whatIsPunycodeDescription),
+                      ],
+                    ),
                   ),
                 ),
               ),
