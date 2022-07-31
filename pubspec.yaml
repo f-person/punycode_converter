@@ -20,7 +20,6 @@ dependencies:
   flutter_hooks: ^0.18.5+1
   flutter_localizations:
     sdk: flutter
-  flutter_top_blocked_bouncing_scroll_physics: ^1.0.0
   font_awesome_flutter: ^10.1.0
   fpdart: ^0.2.0
   in_app_review: ^2.0.4

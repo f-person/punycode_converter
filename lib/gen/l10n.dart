@@ -200,10 +200,10 @@ class Localization {
     );
   }
 
-  /// `CONTACT AND SUPPORT`
+  /// `CONTACT & SUPPORT`
   String get contactAndSupportTitle {
     return Intl.message(
-      'CONTACT AND SUPPORT',
+      'CONTACT & SUPPORT',
       name: 'contactAndSupportTitle',
       desc: '',
       args: [],

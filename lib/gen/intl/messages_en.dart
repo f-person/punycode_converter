@@ -26,7 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "checkSourceCode":
             MessageLookupByLibrary.simpleMessage("Check the source code"),
         "contactAndSupportTitle":
-            MessageLookupByLibrary.simpleMessage("CONTACT AND SUPPORT"),
+            MessageLookupByLibrary.simpleMessage("CONTACT & SUPPORT"),
         "copyButtonLabel": MessageLookupByLibrary.simpleMessage("COPY"),
         "doneButtonLabel": MessageLookupByLibrary.simpleMessage("Done"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),

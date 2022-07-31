@@ -7,9 +7,8 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:punycode_converter/application/punycode/punycode_converter_cubit/punycode_converter_cubit.dart';
 import 'package:punycode_converter/dependency_injection/dependencies/punycode_dependencies.dart';
 import 'package:punycode_converter/gen/l10n.dart';
-import 'package:punycode_converter/presentation/core/design_system/colors.dart';
 import 'package:punycode_converter/presentation/core/layout/scrollable_flexible_view.dart';
-import 'package:punycode_converter/presentation/core/widgets/blurred_container.dart';
+import 'package:punycode_converter/presentation/core/widgets/blurred_app_bar.dart';
 import 'package:punycode_converter/presentation/punycode_converter/widgets/settings_button.dart';
 import 'package:punycode_converter/presentation/punycode_converter/widgets/translation_field/translation_field.dart';
 
@@ -49,13 +48,7 @@ class _PunycodeConverterScreenState extends State<PunycodeConverterScreen> {
       child: CupertinoScaffold(
         body: Scaffold(
           extendBodyBehindAppBar: true,
-          appBar: AppBar(
-            elevation: 0,
-            backgroundColor: Colors.transparent,
-            flexibleSpace: BlurredContainer(
-              color: AppColors.primary.withOpacity(0.6),
-              child: const SizedBox.expand(),
-            ),
+          appBar: BlurredAppBar(
             title: const Text('Punycode converter'),
             actions: const [SettingsButton()],
           ),
