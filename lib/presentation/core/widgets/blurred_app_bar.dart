@@ -40,7 +40,7 @@ class _AppBarLeading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final canPop = Navigator.of(context).canPop();
+    final canPop = ModalRoute.of(context)?.canPop ?? false;
 
     if (!canPop) {
       return const SizedBox.shrink();
