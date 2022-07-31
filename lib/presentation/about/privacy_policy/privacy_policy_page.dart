@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:punycode_converter/gen/l10n.dart';
 import 'package:punycode_converter/presentation/core/layout/scrollable_flexible_view.dart';
-import 'package:punycode_converter/presentation/core/widgets/app_text_button.dart';
 import 'package:punycode_converter/presentation/core/widgets/blurred_app_bar.dart';
+import 'package:punycode_converter/presentation/core/widgets/done_app_bar_action.dart';
 
 class PrivacyPolicyPage extends StatelessWidget {
   const PrivacyPolicyPage({super.key});
@@ -15,19 +15,7 @@ class PrivacyPolicyPage extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: BlurredAppBar(
         title: Text(localization.privacyPolicy),
-        actions: [
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.only(right: 5),
-              child: AppTextButton(
-                label: localization.doneButtonLabel,
-                onTap: () {
-                  Navigator.of(context, rootNavigator: true).pop();
-                },
-              ),
-            ),
-          ),
-        ],
+        actions: const [DoneAppBarAction()],
         // leading: const SizedBox.shrink(),
       ),
       body: ScrollableFlexibleView(

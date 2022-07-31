@@ -4,15 +4,15 @@ import 'package:punycode_converter/presentation/core/gestures/tappable.dart';
 
 class AppListTile extends StatelessWidget {
   const AppListTile({
-    required this.icon,
     required this.label,
     required this.onTap,
+    this.icon,
     this.trailing,
     super.key,
   });
 
-  final Widget icon;
   final Widget label;
+  final Widget? icon;
   final Widget? trailing;
   final VoidCallback onTap;
 
@@ -27,10 +27,13 @@ class AppListTile extends StatelessWidget {
         height: 40,
         child: Row(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: icon,
-            ),
+            if (icon == null)
+              const SizedBox(width: 10)
+            else
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: icon,
+              ),
             label,
             if (trailing != null) ...[
               const Spacer(),

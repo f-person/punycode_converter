@@ -26,7 +26,13 @@ class _AboutPageSections extends StatelessWidget {
             AppListTile(
               icon: const Icon(FontAwesomeIcons.fileCode),
               label: Text(localization.licenses),
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(
+                  CupertinoPageRoute(
+                    builder: constF(const LicensesListPage()),
+                  ),
+                );
+              },
             ),
           ],
         ),

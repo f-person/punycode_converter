@@ -8,7 +8,7 @@ class TilesListView extends StatelessWidget {
     super.key,
   });
 
-  final List<Widget> children;
+  final Iterable<Widget> children;
   final Widget? header;
 
   @override
@@ -40,7 +40,7 @@ class TilesListView extends StatelessWidget {
             shrinkWrap: true,
             itemCount: children.length,
             itemBuilder: (_, index) {
-              return children[index];
+              return children.elementAt(index);
             },
             separatorBuilder: (_, __) {
               return const SizedBox(
