@@ -8,4 +8,5 @@ abstract class AppColors {
   static const action = Colors.amberAccent;
   static const textSecondary = Color(0xFF79797D);
   static const divider = Color(0x4D79797D);
+  static const error = Colors.red;
 }

@@ -269,6 +269,16 @@ class Localization {
       args: [],
     );
   }
+
+  /// `Invalid Punycode`
+  String get invalidPunycodeError {
+    return Intl.message(
+      'Invalid Punycode',
+      name: 'invalidPunycodeError',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Localization> {

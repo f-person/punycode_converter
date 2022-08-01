@@ -6,11 +6,15 @@ import 'package:keyboard_dismisser/keyboard_dismisser.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:punycode_converter/application/punycode/punycode_converter_cubit/punycode_converter_cubit.dart';
 import 'package:punycode_converter/dependency_injection/dependencies/punycode_dependencies.dart';
+import 'package:punycode_converter/domain/punycode/i_punycode_converter.dart';
 import 'package:punycode_converter/gen/l10n.dart';
+import 'package:punycode_converter/presentation/core/design_system/colors.dart';
 import 'package:punycode_converter/presentation/core/layout/scrollable_flexible_view.dart';
 import 'package:punycode_converter/presentation/core/widgets/blurred_app_bar.dart';
 import 'package:punycode_converter/presentation/punycode_converter/widgets/settings_button.dart';
 import 'package:punycode_converter/presentation/punycode_converter/widgets/translation_field/translation_field.dart';
+
+part 'widgets/translation_field_error.dart';
 
 class PunycodeConverterScreen extends StatefulHookWidget {
   const PunycodeConverterScreen({super.key});
@@ -54,65 +58,72 @@ class _PunycodeConverterScreenState extends State<PunycodeConverterScreen> {
           ),
           body: BlocProvider<PunycodeConverterCubit>(
             create: constF(punycodeConverterCubitLocator()),
-            child: BlocListener<PunycodeConverterCubit, PunycodeConverterState>(
+            child: BlocConsumer<PunycodeConverterCubit, PunycodeConverterState>(
+              buildWhen: (previous, current) =>
+                  previous.punycodeConversionFailure != current.punycodeConversionFailure,
               listener: _createPunycodeConverterListener(
                 textController: textController,
                 punycodeController: punycodeController,
               ),
-              child: ScrollableFlexibleView(
-                physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 10,
-                  ),
-                  child: SafeArea(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ValueListenableBuilder<bool>(
-                          valueListenable: _canDisplayCopyForTextNotifier,
-                          builder: (context, canDisplayCopyButton, _) {
-                            return TranslationField(
-                              controller: textController,
-                              focusNode: _textFocus,
-                              onChanged: context.read<PunycodeConverterCubit>().updateText,
-                              hintText: localization.textExample,
-                              title: localization.textInputLabel,
-                              canDisplayCopyButton: canDisplayCopyButton,
-                            );
-                          },
-                        ),
-                        const SizedBox(height: 20),
-                        ValueListenableBuilder<bool>(
-                          valueListenable: _canDisplayCopyForPunycodeNotifier,
-                          builder: (context, canDisplayCopyButton, _) {
-                            return TranslationField(
-                              controller: punycodeController,
-                              focusNode: _punycodeFocus,
-                              hintText: localization.punycodeExample,
-                              title: localization.punycodeInputLabel,
-                              onChanged: context.read<PunycodeConverterCubit>().updatePunycode,
-                              canDisplayCopyButton: canDisplayCopyButton,
-                            );
-                          },
-                        ),
-                        const Divider(height: 40),
-                        Text(
-                          localization.whatIsPunycodeLabel,
-                          style: const TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
+              builder: (context, state) {
+                return ScrollableFlexibleView(
+                  physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 10,
+                    ),
+                    child: SafeArea(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ValueListenableBuilder<bool>(
+                            valueListenable: _canDisplayCopyForTextNotifier,
+                            builder: (context, canDisplayCopyButton, _) {
+                              return TranslationField(
+                                controller: textController,
+                                focusNode: _textFocus,
+                                onChanged: context.read<PunycodeConverterCubit>().updateText,
+                                hintText: localization.textExample,
+                                title: localization.textInputLabel,
+                                canDisplayCopyButton: canDisplayCopyButton,
+                              );
+                            },
                           ),
-                        ),
-                        const SizedBox(height: 8),
-                        Text(localization.whatIsPunycodeDescription),
-                      ],
+                          const SizedBox(height: 20),
+                          ValueListenableBuilder<bool>(
+                            valueListenable: _canDisplayCopyForPunycodeNotifier,
+                            builder: (context, canDisplayCopyButton, _) {
+                              return TranslationField(
+                                controller: punycodeController,
+                                focusNode: _punycodeFocus,
+                                hintText: localization.punycodeExample,
+                                title: localization.punycodeInputLabel,
+                                onChanged: context.read<PunycodeConverterCubit>().updatePunycode,
+                                canDisplayCopyButton: canDisplayCopyButton,
+                              );
+                            },
+                          ),
+                          _TranslationFieldError(
+                            conversionFailure: state.punycodeConversionFailure,
+                          ),
+                          const Divider(height: 40),
+                          Text(
+                            localization.whatIsPunycodeLabel,
+                            style: const TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          const SizedBox(height: 8),
+                          Text(localization.whatIsPunycodeDescription),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ),
+                );
+              },
             ),
           ),
         ),

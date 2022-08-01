@@ -20,5 +20,6 @@
   "email": "Email",
   "reportBug": "Report a bug",
   "suggestImporvement": "Suggest an improvement",
-  "checkSourceCode": "Check the source code"
+  "checkSourceCode": "Check the source code",
+  "invalidPunycodeError": "Invalid Punycode"
 }

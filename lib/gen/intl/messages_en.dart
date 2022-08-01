@@ -30,6 +30,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "copyButtonLabel": MessageLookupByLibrary.simpleMessage("COPY"),
         "doneButtonLabel": MessageLookupByLibrary.simpleMessage("Done"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "invalidPunycodeError":
+            MessageLookupByLibrary.simpleMessage("Invalid Punycode"),
         "legalStuffTitle": MessageLookupByLibrary.simpleMessage("LEGAL STUFF"),
         "licenses": MessageLookupByLibrary.simpleMessage("Licenses"),
         "madeByTitle": MessageLookupByLibrary.simpleMessage("MADE BY"),
