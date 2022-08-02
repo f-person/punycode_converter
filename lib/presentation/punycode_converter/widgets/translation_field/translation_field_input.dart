@@ -35,31 +35,33 @@ class _TranslationFieldInputState extends State<_TranslationFieldInput> {
 
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(20)),
-        color: AppColors.secondary30,
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 12,
+    return GestureDetector(
+      onTap: () {
+        widget.focusNode.requestFocus();
+      },
+      child: DecoratedBox(
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+          color: AppColors.secondary30,
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              child: TextField(
-                controller: widget.controller,
-                onChanged: widget.onChanged,
-                focusNode: widget.focusNode,
-                textInputAction: TextInputAction.newline,
-                minLines: 5,
-                maxLines: null,
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: widget.hintText,
-                  contentPadding: EdgeInsets.zero,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 16, top: 12),
+                child: TextField(
+                  controller: widget.controller,
+                  onChanged: widget.onChanged,
+                  focusNode: widget.focusNode,
+                  textInputAction: TextInputAction.newline,
+                  minLines: 5,
+                  maxLines: null,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: widget.hintText,
+                    contentPadding: EdgeInsets.zero,
+                  ),
                 ),
               ),
             ),
@@ -68,7 +70,7 @@ class _TranslationFieldInputState extends State<_TranslationFieldInput> {
               builder: (context, hasFocus, _) {
                 return AnimatedSwitcherWrapper(
                   child: !hasFocus
-                      ? const SizedBox.shrink()
+                      ? const SizedBox.square(dimension: AppIconButton.dimension)
                       : _TranslationFieldSuffix(
                           controller: widget.controller,
                           valueChangedCallback: widget.onChanged,

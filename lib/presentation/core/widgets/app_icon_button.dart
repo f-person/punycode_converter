@@ -11,12 +11,14 @@ class AppIconButton extends StatelessWidget {
   final Widget icon;
   final VoidCallback onTap;
 
+  static const dimension = 48.0;
+
   @override
   Widget build(BuildContext context) {
     return Tappable(
       onTap: onTap,
       child: SizedBox.square(
-        dimension: 48.0,
+        dimension: dimension,
         child: Center(
           child: Padding(
             padding: const EdgeInsets.all(8.0),

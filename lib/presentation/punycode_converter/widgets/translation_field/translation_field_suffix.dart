@@ -30,12 +30,12 @@ class _TranslationFieldSuffix extends StatelessWidget {
               ),
             );
           },
-          child: Tappable(
+          child: AppIconButton(
             key: Key(
               shouldClear ? 'translation_field_clear' : 'translation_field_paste',
             ),
             onTap: shouldClear ? _clearInput : _pasteTextIntoInput,
-            child: shouldClear ? clearIcon : pasteIcon,
+            icon: shouldClear ? clearIcon : pasteIcon,
           ),
         );
       },

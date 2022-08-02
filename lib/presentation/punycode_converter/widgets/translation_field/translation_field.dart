@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:punycode_converter/gen/l10n.dart';
 import 'package:punycode_converter/presentation/core/design_system/colors.dart';
-import 'package:punycode_converter/presentation/core/gestures/tappable.dart';
+import 'package:punycode_converter/presentation/core/widgets/app_icon_button.dart';
 import 'package:punycode_converter/presentation/core/widgets/app_text_button.dart';
 import 'package:punycode_converter/presentation/core/wrappers/animated_switcher_wrapper.dart';
 
