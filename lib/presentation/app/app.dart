@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:punycode_converter/gen/l10n.dart';
@@ -18,6 +19,15 @@ class App extends StatelessWidget {
           backgroundColor: AppColors.secondary30,
         ),
         scaffoldBackgroundColor: AppColors.primary,
+        textSelectionTheme: const TextSelectionThemeData(
+          selectionColor: AppColors.action10,
+          selectionHandleColor: AppColors.action,
+          cursorColor: AppColors.action,
+        ),
+        cupertinoOverrideTheme: const NoDefaultCupertinoThemeData(
+          // Overrides the selection handle color.
+          primaryColor: AppColors.action,
+        ),
       ),
       localizationsDelegates: const [
         Localization.delegate,

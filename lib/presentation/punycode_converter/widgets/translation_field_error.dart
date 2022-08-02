@@ -32,7 +32,8 @@ class _TranslationFieldErrorState extends State<_TranslationFieldError> {
       duration: const Duration(milliseconds: 300),
       padding: EdgeInsets.only(
         left: 16,
-        top: _hasError ? 20 : 0,
+        top: _hasError ? 10 : 5,
+        bottom: _hasError ? 10 : 5,
       ),
       child: AnimatedOpacity(
         duration: const Duration(milliseconds: 300),

@@ -53,10 +53,7 @@ class TranslationField extends StatelessWidget {
                 return AnimatedSwitcherWrapper(
                   transitionBuilder: AnimatedSwitcher.defaultTransitionBuilder,
                   child: shouldDisplayCopyButton
-                      ? SizedBox(
-                          height: 48,
-                          child: _TranslationFieldCopyButton(controller: controller),
-                        )
+                      ? _TranslationFieldCopyButton(controller: controller)
                       : const SizedBox(height: 48),
                 );
               },

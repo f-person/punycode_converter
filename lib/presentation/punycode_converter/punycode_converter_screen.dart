@@ -108,7 +108,8 @@ class _PunycodeConverterScreenState extends State<PunycodeConverterScreen> {
                           _TranslationFieldError(
                             conversionFailure: state.punycodeConversionFailure,
                           ),
-                          const Divider(height: 40),
+                          const Divider(height: 0),
+                          const SizedBox(height: 20),
                           Text(
                             localization.whatIsPunycodeLabel,
                             style: const TextStyle(

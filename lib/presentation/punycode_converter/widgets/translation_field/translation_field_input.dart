@@ -61,7 +61,6 @@ class _TranslationFieldInputState extends State<_TranslationFieldInput> {
                   hintText: widget.hintText,
                   contentPadding: EdgeInsets.zero,
                 ),
-                cursorColor: AppColors.action,
               ),
             ),
             ValueListenableBuilder<bool>(
