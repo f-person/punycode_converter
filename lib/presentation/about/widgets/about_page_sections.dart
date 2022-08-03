@@ -74,7 +74,7 @@ class _AboutPageSections extends StatelessWidget {
                 FontAwesomeIcons.solidHeart,
                 color: AppColors.action,
               ),
-              label: Text(localization.reviewOnAppStore),
+              label: Text(_getReviewTileLabelText(localization)),
               onTap: () => inAppReviewLocator().openStoreReviewForm(),
             ),
           ],
@@ -93,5 +93,13 @@ class _AboutPageSections extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  String _getReviewTileLabelText(Localization localization) {
+    if (Platform.isIOS || Platform.isMacOS) {
+      return localization.reviewOnAppStore;
+    } else {
+      return localization.reviewOnGooglePlay;
+    }
   }
 }

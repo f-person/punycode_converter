@@ -45,6 +45,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "reportBug": MessageLookupByLibrary.simpleMessage("Report a bug"),
         "reviewOnAppStore":
             MessageLookupByLibrary.simpleMessage("Review on the App Store"),
+        "reviewOnGooglePlay":
+            MessageLookupByLibrary.simpleMessage("Review on Google Play"),
         "settingsScreenTitle": MessageLookupByLibrary.simpleMessage("Settings"),
         "suggestImporvement":
             MessageLookupByLibrary.simpleMessage("Suggest an improvement"),

@@ -230,6 +230,16 @@ class Localization {
     );
   }
 
+  /// `Review on Google Play`
+  String get reviewOnGooglePlay {
+    return Intl.message(
+      'Review on Google Play',
+      name: 'reviewOnGooglePlay',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Email`
   String get email {
     return Intl.message(
