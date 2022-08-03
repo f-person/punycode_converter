@@ -2,7 +2,7 @@
 abstract class AppStrings {
   static const appStoreId = '1637273151';
 
-  static const supportEmail = 'support@fperson.dev';
+  static const supportEmail = 'arshak.aghakaryan@gmail.com';
   static const supportEmailLink = 'mailto:$supportEmail';
 
   static const makerGitHubUsername = 'f-person';
