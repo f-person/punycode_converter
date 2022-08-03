@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:punycode_converter/application/core/app_strings.dart';
 import 'package:punycode_converter/gen/l10n.dart';
 import 'package:punycode_converter/presentation/core/design_system/colors.dart';
 import 'package:punycode_converter/presentation/punycode_converter/punycode_converter_screen.dart';
@@ -27,8 +28,9 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: AppStrings.appName,
       theme: ThemeData(
+        platform: TargetPlatform.iOS,
         primaryColor: AppColors.primary,
         brightness: Brightness.dark,
         appBarTheme: const AppBarTheme(

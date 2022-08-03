@@ -1,5 +1,7 @@
 /// Holds static strings that don't require localization (e.g. URLs).
 abstract class AppStrings {
+  static const appName = 'Punycode Converter';
+
   static const appStoreId = '1637273151';
 
   static const supportEmail = 'arshak.aghakaryan@gmail.com';
