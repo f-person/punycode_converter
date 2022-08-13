@@ -49,12 +49,14 @@ class _TranslationFieldInputState extends State<_TranslationFieldInput> {
           children: [
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(left: 16, top: 12),
+                padding: const EdgeInsets.only(left: 16, top: 12, bottom: 16),
                 child: TextField(
                   controller: widget.controller,
                   onChanged: widget.onChanged,
                   focusNode: widget.focusNode,
                   textInputAction: TextInputAction.newline,
+                  autocorrect: false,
+                  keyboardType: TextInputType.multiline,
                   minLines: 5,
                   maxLines: null,
                   decoration: InputDecoration(
