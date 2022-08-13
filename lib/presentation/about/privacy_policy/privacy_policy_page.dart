@@ -16,7 +16,6 @@ class PrivacyPolicyPage extends StatelessWidget {
       appBar: BlurredAppBar(
         title: Text(localization.privacyPolicy),
         actions: const [DoneAppBarAction()],
-        // leading: const SizedBox.shrink(),
       ),
       body: ScrollableFlexibleView(
         physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
