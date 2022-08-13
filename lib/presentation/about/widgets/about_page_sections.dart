@@ -15,13 +15,7 @@ class _AboutPageSections extends StatelessWidget {
             AppListTile(
               icon: const Icon(FontAwesomeIcons.fileLines),
               label: Text(localization.privacyPolicy),
-              onTap: () {
-                Navigator.of(context).push(
-                  CupertinoPageRoute(
-                    builder: constF(const PrivacyPolicyPage()),
-                  ),
-                );
-              },
+              onTap: () => _openPrivacyPolicy(context),
             ),
             AppListTile(
               icon: const Icon(FontAwesomeIcons.fileCode),
@@ -93,6 +87,18 @@ class _AboutPageSections extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  void _openPrivacyPolicy(BuildContext context) {
+    if (Platform.isAndroid) {
+      urlLauncherLocator().launchUrl(AppStrings.privacyPolicyUrl);
+    } else {
+      Navigator.of(context).push(
+        CupertinoPageRoute(
+          builder: constF(const PrivacyPolicyPage()),
+        ),
+      );
+    }
   }
 
   String _getReviewTileLabelText(Localization localization) {

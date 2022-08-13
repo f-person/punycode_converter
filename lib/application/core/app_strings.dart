@@ -13,4 +13,6 @@ abstract class AppStrings {
 
   static const projectGitHubRepositoryLink = '$makerGitHubLink/punycode_converter';
   static const projectGitHubIssuesLink = '$projectGitHubRepositoryLink/issues';
+
+  static const privacyPolicyUrl = 'https://punycode-converter.fperson.dev/privacy.html';
 }
