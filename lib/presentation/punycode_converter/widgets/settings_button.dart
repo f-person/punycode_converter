@@ -1,5 +1,5 @@
+import 'package:boxicons/boxicons.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:punycode_converter/presentation/about/about_page.dart';
@@ -11,7 +11,7 @@ class SettingsButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppIconButton(
-      icon: const Icon(FontAwesomeIcons.ellipsis),
+      icon: const Icon(Boxicons.bx_dots_horizontal_rounded),
       onTap: () {
         CupertinoScaffold.showCupertinoModalBottomSheet(
           duration: const Duration(milliseconds: 300),

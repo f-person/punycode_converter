@@ -1,8 +1,8 @@
 import 'dart:io';
 
+import 'package:boxicons/boxicons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:punycode_converter/application/core/app_strings.dart';
 import 'package:punycode_converter/dependency_injection/dependencies/stores_dependencies.dart';

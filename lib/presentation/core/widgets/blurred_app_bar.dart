@@ -1,5 +1,5 @@
+import 'package:boxicons/boxicons.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:punycode_converter/presentation/core/design_system/colors.dart';
 import 'package:punycode_converter/presentation/core/widgets/app_icon_button.dart';
 import 'package:punycode_converter/presentation/core/widgets/blurred_container.dart';
@@ -47,7 +47,7 @@ class _AppBarLeading extends StatelessWidget {
     }
 
     return AppIconButton(
-      icon: const Icon(FontAwesomeIcons.angleLeft),
+      icon: const Icon(Boxicons.bx_arrow_back),
       onTap: () {
         Navigator.of(context).pop();
       },

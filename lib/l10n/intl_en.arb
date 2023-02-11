@@ -22,5 +22,6 @@
   "reportBug": "Report a bug",
   "suggestImporvement": "Suggest an improvement",
   "checkSourceCode": "Check the source code",
-  "invalidPunycodeError": "Invalid Punycode"
+  "invalidPunycodeError": "Invalid Punycode",
+  "supportDeveloper": "Support the developer"
 }

@@ -15,8 +15,8 @@ class _TranslationFieldSuffix extends StatelessWidget {
     return ValueListenableBuilder<TextEditingValue>(
       valueListenable: controller,
       builder: (context, value, _) {
-        const pasteIcon = Icon(Icons.paste_rounded);
-        const clearIcon = Icon(Icons.clear_rounded);
+        const pasteIcon = Icon(Boxicons.bx_paste);
+        const clearIcon = Icon(Boxicons.bx_x_circle);
 
         final shouldClear = value.text.isNotEmpty;
 

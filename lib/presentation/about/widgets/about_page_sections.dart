@@ -13,12 +13,12 @@ class _AboutPageSections extends StatelessWidget {
           header: Text(localization.legalStuffTitle),
           children: [
             AppListTile(
-              icon: const Icon(FontAwesomeIcons.fileLines),
+              icon: const Icon(Boxicons.bx_file),
               label: Text(localization.privacyPolicy),
               onTap: () => _openPrivacyPolicy(context),
             ),
             AppListTile(
-              icon: const Icon(FontAwesomeIcons.fileCode),
+              icon: const Icon(Boxicons.bx_code_alt),
               label: Text(localization.licenses),
               onTap: () {
                 Navigator.of(context).push(
@@ -35,29 +35,23 @@ class _AboutPageSections extends StatelessWidget {
           header: Text(localization.contactAndSupportTitle),
           children: [
             AppListTile(
-              icon: const Icon(FontAwesomeIcons.comment),
+              icon: const Icon(Boxicons.bx_mail_send),
               label: Text(localization.email),
               trailing: const Text(AppStrings.supportEmail),
               onTap: () => urlLauncherLocator().launchUrl(AppStrings.supportEmailLink),
             ),
             AppListTile(
-              icon: const Icon(FontAwesomeIcons.lightbulb),
+              icon: const Icon(Boxicons.bx_bulb),
               label: Text(localization.suggestImporvement),
               onTap: () => urlLauncherLocator().launchUrl(AppStrings.projectGitHubIssuesLink),
             ),
             AppListTile(
-              icon: const Icon(FontAwesomeIcons.bug),
+              icon: const Icon(Boxicons.bx_bug_alt),
               label: Text(localization.reportBug),
               onTap: () => urlLauncherLocator().launchUrl(AppStrings.projectGitHubIssuesLink),
             ),
             AppListTile(
-              icon: const SizedBox(
-                width: 24,
-                child: Icon(
-                  FontAwesomeIcons.code,
-                  size: 20,
-                ),
-              ),
+              icon: const Icon(Boxicons.bxl_github),
               label: Text(localization.checkSourceCode),
               onTap: () => urlLauncherLocator().launchUrl(
                 AppStrings.projectGitHubRepositoryLink,
@@ -65,7 +59,7 @@ class _AboutPageSections extends StatelessWidget {
             ),
             AppListTile(
               icon: const Icon(
-                FontAwesomeIcons.solidHeart,
+                Boxicons.bxs_heart,
                 color: AppColors.action,
               ),
               label: Text(_getReviewTileLabelText(localization)),
@@ -78,7 +72,7 @@ class _AboutPageSections extends StatelessWidget {
           header: Text(localization.madeByTitle),
           children: [
             AppListTile(
-              icon: const Icon(FontAwesomeIcons.github),
+              icon: const Icon(Boxicons.bxl_github),
               label: Text(localization.makerName),
               trailing: const Text(AppStrings.makerGitHubHandle),
               onTap: () => urlLauncherLocator().launchUrl(AppStrings.makerGitHubLink),

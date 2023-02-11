@@ -1,3 +1,4 @@
+import 'package:boxicons/boxicons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:punycode_converter/gen/l10n.dart';

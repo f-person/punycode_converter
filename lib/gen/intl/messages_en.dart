@@ -50,6 +50,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "settingsScreenTitle": MessageLookupByLibrary.simpleMessage("Settings"),
         "suggestImporvement":
             MessageLookupByLibrary.simpleMessage("Suggest an improvement"),
+        "supportDeveloper":
+            MessageLookupByLibrary.simpleMessage("Support the developer"),
         "textExample":
             MessageLookupByLibrary.simpleMessage("Example: թութ.հայ"),
         "textInputLabel": MessageLookupByLibrary.simpleMessage("Text"),
